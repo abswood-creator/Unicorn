@@ -1,4 +1,4 @@
-#include "../compiler/lexer/lexer.hpp"
+#include "../lexer/lexer.hpp"
 
 #include <cassert>
 #include <iostream>
