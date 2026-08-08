@@ -439,11 +439,37 @@ int main()
     assert(tokens[i].type == TokenType::RightBracket);
     ++i;
 
-    // ------------------------------------------------------------
-    // End of file
-    // ------------------------------------------------------------
+    assert(tokens[i].type == TokenType::Semicolon);
+    ++i;
 
-    assert(tokens.back().type == TokenType::EndOfFile);
+    // x, number;
+    assert(tokens[i].type == TokenType::Identifier);
+    assert(tokens[i++].lexeme == "x");
+
+    assert(tokens[i].type == TokenType::Comma);
+    ++i;
+
+    assert(tokens[i].type == TokenType::Identifier);
+    assert(tokens[i++].lexeme == "number");
+
+    assert(tokens[i].type == TokenType::Semicolon);
+    ++i;
+
+    // x: number;
+    assert(tokens[i].type == TokenType::Identifier);
+    assert(tokens[i++].lexeme == "x");
+
+    assert(tokens[i].type == TokenType::Colon);
+    ++i;
+
+    assert(tokens[i].type == TokenType::Identifier);
+    assert(tokens[i++].lexeme == "number");
+
+    assert(tokens[i].type == TokenType::Semicolon);
+    ++i;
+
+    // End of file
+    assert(tokens[i].type == TokenType::EndOfFile);
 
     std::cout << "🦄 All lexer tests passed!\n";
 
