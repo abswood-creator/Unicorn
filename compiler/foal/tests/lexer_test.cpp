@@ -46,6 +46,16 @@ int main()
     Lexer lexer(source);
     auto tokens = lexer.tokenize();
 
+    for (std::size_t n = 0; n < tokens.size(); ++n) {
+        std::cout
+            << n
+            << ": "
+            << static_cast<int>(tokens[n].type)
+            << " -> \""
+            << tokens[n].lexeme
+            << "\"\n";
+    }
+
     std::size_t i = 0;
 
     // ------------------------------------------------------------
