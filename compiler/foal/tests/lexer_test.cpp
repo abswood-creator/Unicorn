@@ -5,6 +5,55 @@
 
 using namespace unicorn;
 
+const char* tokenName(TokenType type)
+{
+    switch (type) {
+        case TokenType::Identifier:   return "Identifier";
+        case TokenType::Number:       return "Number";
+        case TokenType::String:       return "String";
+
+        case TokenType::Let:          return "Let";
+        case TokenType::Func:         return "Func";
+        case TokenType::Return:       return "Return";
+        case TokenType::If:           return "If";
+        case TokenType::Else:         return "Else";
+
+        case TokenType::Plus:         return "Plus";
+        case TokenType::Minus:        return "Minus";
+        case TokenType::Star:         return "Star";
+        case TokenType::Slash:        return "Slash";
+        case TokenType::Percent:      return "Percent";
+
+        case TokenType::Equal:        return "Equal";
+        case TokenType::EqualEqual:   return "EqualEqual";
+        case TokenType::NotEqual:     return "NotEqual";
+        case TokenType::Less:         return "Less";
+        case TokenType::LessEqual:    return "LessEqual";
+        case TokenType::Greater:      return "Greater";
+        case TokenType::GreaterEqual: return "GreaterEqual";
+
+        case TokenType::And:          return "And";
+        case TokenType::Or:           return "Or";
+        case TokenType::Not:          return "Not";
+
+        case TokenType::LeftParen:    return "LeftParen";
+        case TokenType::RightParen:   return "RightParen";
+        case TokenType::LeftBrace:    return "LeftBrace";
+        case TokenType::RightBrace:   return "RightBrace";
+        case TokenType::LeftBracket:  return "LeftBracket";
+        case TokenType::RightBracket: return "RightBracket";
+
+        case TokenType::Comma:        return "Comma";
+        case TokenType::Colon:        return "Colon";
+        case TokenType::Semicolon:    return "Semicolon";
+
+        case TokenType::EndOfFile:    return "EndOfFile";
+        case TokenType::Unknown:      return "Unknown";
+    }
+
+    return "Unknown";
+}
+
 int main()
 {
     const std::string source = R"(
