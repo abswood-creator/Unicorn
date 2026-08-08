@@ -1,13 +1,11 @@
 #pragma once
 
-#include <string>
 #include <cstddef>
+#include <string>
 
-namespace unicorn
-{
+namespace unicorn {
 
-enum class TokenType
-{
+enum class TokenType {
     // Literals
     Identifier,
     Number,
@@ -20,14 +18,14 @@ enum class TokenType
     If,
     Else,
 
-    // Arithmetic operators
+    // Arithmetic
     Plus,
     Minus,
     Star,
     Slash,
     Percent,
 
-    // Assignment and comparison
+    // Comparison
     Equal,
     EqualEqual,
     NotEqual,
@@ -36,7 +34,7 @@ enum class TokenType
     Greater,
     GreaterEqual,
 
-    // Logical operators
+    // Logical
     And,
     Or,
     Not,
@@ -58,15 +56,11 @@ enum class TokenType
     Unknown
 };
 
-
-struct Token
-{
+struct Token {
     TokenType type;
     std::string lexeme;
-
     std::size_t line;
     std::size_t column;
 };
-
 
 } // namespace unicorn
